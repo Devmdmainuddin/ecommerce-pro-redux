@@ -131,7 +131,8 @@
       "category": "Science Fiction",
       "tags": ["fiction", "survival", "space"],
       "publisher": "Crown Publishing Group",
-      "yearOfPublishing": 2011
+      "yearOfPublishing": 2011,
+      "slug":"The-Martian"
     },
     {
       "bookId": "10",

@@ -9,7 +9,7 @@ const ContextComponent = ({ children }) => {
     const dispatch = useDispatch();
     console.log(carts);
 
-    
+
     useEffect(() => {
         fetch('FakeBooks.json')
             .then((res) => res.json())
@@ -26,7 +26,7 @@ const ContextComponent = ({ children }) => {
     }
 
     return (
-        <ProduceComponents.Provider value={{ products, handleAddToCart }}>
+        <ProduceComponents.Provider value={{ products,carts, handleAddToCart }}>
             {children}
         </ProduceComponents.Provider>
     );
