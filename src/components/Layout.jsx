@@ -4,8 +4,8 @@ import Header from "./Header";
 
 const Layout = () => {
     return (
-        <div>
-           <div className="main">
+        <div className="overflow-hidden">
+           <div className="main ">
             <Header></Header>
             <Outlet></Outlet>
             </div> 

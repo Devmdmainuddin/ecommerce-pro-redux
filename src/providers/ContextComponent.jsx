@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { useDispatch, useSelector, } from 'react-redux';
-import { addToCart } from '../redux/state/cart';
+import { addToCart,changeQuantity } from '../redux/state/cart';
 import PropTypes from 'prop-types';
 export const ProduceComponents = createContext()
 const ContextComponent = ({ children }) => {
@@ -24,9 +24,24 @@ const ContextComponent = ({ children }) => {
             quantity: 1,
         }))
     }
+    const handkeMinusQuantity = (productId,quantity) => {
+        dispatch(changeQuantity({
+            productId: productId,
+            quantity: quantity - 1 ,
+        }))
+        
+    }
+    const handkePlusQuantity = (productId,quantity) => {
+        dispatch(changeQuantity({
+            productId:  productId,
+            quantity: quantity + 1,
+        }))
+    }
+   
+
 
     return (
-        <ProduceComponents.Provider value={{ products,carts, handleAddToCart }}>
+        <ProduceComponents.Provider value={{ products,carts, handleAddToCart,handkeMinusQuantity,handkePlusQuantity }}>
             {children}
         </ProduceComponents.Provider>
     );
